@@ -18,7 +18,7 @@ after_success:
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push afrozjava/multi-client
-  - docker push afrozjava/multi-nginx
-  - docker push afrozjava/multi-server
-  - docker push afrozjava/multi-worker
+  - docker push afroz4ibm/multi-client
+  - docker push afroz4ibm/multi-nginx
+  - docker push afroz4ibm/multi-server
+  - docker push afroz4ibm/multi-worker
