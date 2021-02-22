@@ -5,16 +5,16 @@ services:
   - docker
 
 before_install:
-  - docker build -t afrozjava/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t afroz4ibm/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true afrozjava/react-test npm test
+  - docker run -e CI=true afroz4ibm/react-test npm test
 
 after_success:
-  - docker build -t afrozjava/multi-client ./client
-  - docker build -t afrozjava/multi-nginx ./nginx
-  - docker build -t afrozjava/multi-server ./server
-  - docker build -t afrozjava/multi-worker ./worker
+  - docker build -t afroz4ibm/multi-client ./client
+  - docker build -t afroz4ibm/multi-nginx ./nginx
+  - docker build -t afroz4ibm/multi-server ./server
+  - docker build -t afroz4ibm/multi-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
